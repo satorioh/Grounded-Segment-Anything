@@ -85,11 +85,11 @@ class Predictor(BasePredictor):
         )
 
     def predict(
-        self,
-        input_image: Path = Input(description="Input image"),
-        use_sam_hq: bool = Input(
-            description="Use sam_hq instead of SAM for prediction", default=False
-        ),
+            self,
+            input_image: Path = Input(description="Input image"),
+            use_sam_hq: bool = Input(
+                description="Use sam_hq instead of SAM for prediction", default=False
+            ),
     ) -> ModelOutput:
         """Run a single prediction on the model"""
 
@@ -203,7 +203,7 @@ class Predictor(BasePredictor):
 
 
 def get_grounding_output(
-    model, image, caption, box_threshold, text_threshold, device="cpu"
+        model, image, caption, box_threshold, text_threshold, device="cpu"
 ):
     caption = caption.lower()
     caption = caption.strip()
